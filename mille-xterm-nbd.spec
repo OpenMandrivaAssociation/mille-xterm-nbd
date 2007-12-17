@@ -12,7 +12,6 @@ Source3:	README.fr
 Source4:	INSTALL.fr
 BuildRequires:	pkgconfig
 BuildRequires:	glib2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Network Block Device support for MILLE-XTERM. 
