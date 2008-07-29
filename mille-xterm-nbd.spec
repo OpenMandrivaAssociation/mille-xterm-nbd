@@ -1,7 +1,7 @@
 Summary:	Network Block Device support for MILLE-XTERM
 Name:		mille-xterm-nbd
 Version:	2.8.6
-Release:	%mkrel 2
+Release:	%mkrel 4
 License:	GPL
 Group:		System/Servers
 URL:		http://sourceforge.net/projects/nbd
