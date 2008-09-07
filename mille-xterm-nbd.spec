@@ -1,18 +1,18 @@
 Summary:	Network Block Device support for MILLE-XTERM
 Name:		mille-xterm-nbd
-Version:	2.8.6
-Release:	%mkrel 4
+Version:	2.9.11
+Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://sourceforge.net/projects/nbd
-Source:		http://prdownloads.sourceforge.net/nbd/nbd-%{version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/nbd/nbd-%{version}.tar.gz
 Source1:	nbd-server.wrapper
 Source2:	nbd-server.xinetd
 Source3:	README.fr
 Source4:	INSTALL.fr
 BuildRequires:	pkgconfig
 BuildRequires:	glib2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Network Block Device support for MILLE-XTERM. 
@@ -95,10 +95,9 @@ rm -rf %{buildroot}
 %{_sbindir}/nbd-server
 %{_sbindir}/nbd-server.wrapper
 %{_mandir}/man1/nbd-server.1*
+%{_mandir}/man5/nbd-server.5*
 
 %files -n %{name}-client
 %defattr(-,root,root)
 %{_bindir}/nbd-client
 %{_mandir}/man8/nbd-client.8*
-
-
