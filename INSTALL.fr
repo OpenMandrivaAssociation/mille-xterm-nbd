@@ -1,0 +1,37 @@
+
+Installer le package "mille-xterm-nbd-server" dans le serveur boot
+ou sur un serveur de'die' au swap.
+
+    Ex: rpm -ivh mille-xterm-nbd-server-2.8.4-1.i586.rpm
+
+Installer le package "mille-xterm-nbd-client" dans le serveur boot
+dans la racine /opt/xtermroot
+
+    Ex: rpm -ivh mille-xterm-nbd-client-2.8.4-1.i586.rpm --root=/opt/xtermroot
+
+Note: mille-xterm-nbd utilise xinetd. Pour augmenter le nombre de
+      connexion modifier le fichier "/etc/sysconfig/xinetd"
+      et ajouter la ligne suivante :
+
+      EXTRAOPTIONS="-limit 100"
+
+      re-demarrer xinetd : service xinetd restart
+
+Pour construire les RPM faire :
+
+    cp mille-xterm-nbd.spec /usr/src/RPM/SPECS
+    cp nb_child.patch /usr/src/RPM/SOURCES/
+    cp nbd-server.wrapper /usr/src/RPM/SOURCES/
+    cp nbd-server.xinetd /usr/src/RPM/SOURCES/
+    
+    cd /usr/src/RPM/SOURCES/
+    wget http://voxel.dl.sourceforge.net/sourceforge/nbd/nbd-2.8.4.tar.bz2
+
+    cd /usr/src/RPM/SPECS
+    rpmbuild -ba mille-xterm-nbd.spec
+
+Vous obtiendrez les fichiers suivants :
+
+/usr/src/RPM/SRPMS/mille-xterm-nbd-2.8.4-1.src.rpm
+/usr/src/RPM/RPMS/i586/mille-xterm-nbd-server-2.8.4-1.i586.rpm
+/usr/src/RPM/RPMS/i586/mille-xterm-nbd-client-2.8.4-1.i586.rpm

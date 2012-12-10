@@ -101,3 +101,40 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_bindir}/nbd-client
 %{_mandir}/man8/nbd-client.8*
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 2.9.11-3mdv2011.0
++ Revision: 620334
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 2.9.11-2mdv2010.0
++ Revision: 430032
+- rebuild
+
+* Sun Sep 07 2008 Oden Eriksson <oeriksson@mandriva.com> 2.9.11-1mdv2009.0
++ Revision: 282157
+- 2.9.11
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 2.8.6-2mdv2008.1
++ Revision: 136579
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Mon Mar 05 2007 Oden Eriksson <oeriksson@mandriva.com> 2.8.6-2mdv2007.0
++ Revision: 133067
+- bunzip sources
+
+* Thu Feb 08 2007 Oden Eriksson <oeriksson@mandriva.com> 2.8.6-1mdv2007.1
++ Revision: 117780
+- Import mille-xterm-nbd
+
+* Fri Sep 29 2006 Oden Eriksson <oeriksson@mandriva.com> 2.8.6-1mdk
+- initial Mandriva package (mille-xterm import)
+

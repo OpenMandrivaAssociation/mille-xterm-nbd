@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+# Copyright 2006, CRIM, Revolution Linux Inc.
+#
+# $Id: nbd-server.wrapper 2096 2006-08-16 02:28:59Z jmdault $
+#
+# Authors :
+# Gabriel Lefebvre
+# Francis Giraldeau <francis.giraldeau@revolutionlinux.com>
+#
+# This file is part of the MILLE-XTERM project.
+#
+#       http://www.revolutionlinux.com/mille-xterm/
+#       http://www.mille.ca/
+#
+# This program is covered by the GNU General Public License.
+# See the COPYING file in the top-level MILLE-XTERM directory.
+#
+# ------------------------------------------------------------------------
+
+import os, sys
+import logging
+import string
+import shutil
+
+logging.basicConfig(level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(message)s',
+    filename='/tmp/nbd-server.log',
+    filemode='a')
+
+
+# Process args
+# Typical args are : 
+# ['/usr/sbin/nbd-server.wrapper', '3000', '/swapfiles/%s.swap', '32m']
+logging.debug("argv: " + str(sys.argv))
+
+# Port should be set to 0 to make the nbd-server daemon work
+port = "0"
+file = sys.argv[2]
+size = sys.argv[3]
+
+# Get the IP address of the client
+logging.debug("remote host: " + os.getenv("REMOTE_HOST") )
+
+# Create new swap file if it does not exists
+
+file_path = string.replace(file, '%s', os.getenv("REMOTE_HOST") )
+if not os.path.isfile(file_path):
+    logging.debug("Create new swap file : " + file_path)
+    try:
+	shutil.copyfile("/swapfiles/default.swap",file_path) 
+    except:
+	logging.debug("Error while creating swap file : " + file_path)
+	sys.exit(1)
+
+# Replace current process by nbd-server
+args = ['nbd-server',port,file_path,size]
+logging.debug("Command is : " + string.join(args) )
+os.execv('/usr/sbin/nbd-server', args )
+

@@ -1,0 +1,7 @@
+Le NBD est utilise' lorsque le terminal na pas assez de memoire.
+Dans ce cas, on ajoute une swap qui sera accessible via reseau avec
+le service NBD.
+
+Ce package est experimental pour le moment. Il ajoute de la consommation
+de bande passante sur le reseau entre le terminal et le serveur boot.
+De plus, chaque instance de nbd cote' serveur prend de la memoire.

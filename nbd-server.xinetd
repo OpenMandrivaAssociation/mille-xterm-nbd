@@ -1,0 +1,14 @@
+# default: off
+# description: nbd-server, xinetd version. \
+service nbd-server
+{
+	disable	= no
+	socket_type		= stream
+	wait			= no
+	user			= nbd
+	group			= nbd
+	server			= /usr/sbin/nbd-server.wrapper
+	server_args		= 0 /swapfiles/%s.swap 32m
+	port			= 3000
+	log_on_success		+= HOST
+}

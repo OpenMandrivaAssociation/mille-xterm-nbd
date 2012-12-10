@@ -1,6 +1,2 @@
 sources:
-  "INSTALL.fr:"	f6d49cd707e7f63b469df838a8921ebdb881da28
-  "nbd-2.9.11.tar.gz:"	adad68a3684e0a4480bde071e987c0b6621aaf79
-  "nbd-server.wrapper:"	f91024842b69b8d9df96615618bf1b149a9f8118
-  "nbd-server.xinetd:"	63bfa411ff7ce5baf8926fe4246430606ed8ea0b
-  "README.fr:"	dbfef8d57e3685303b5927ba24b3060c234c98ee
+  "nbd-2.9.11.tar.gz": adad68a3684e0a4480bde071e987c0b6621aaf79
