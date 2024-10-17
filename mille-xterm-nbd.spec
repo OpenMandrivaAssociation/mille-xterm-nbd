@@ -4,7 +4,7 @@ Version:	2.9.11
 Release:	%mkrel 3
 License:	GPL
 Group:		System/Servers
-URL:		http://sourceforge.net/projects/nbd
+URL:		https://sourceforge.net/projects/nbd
 Source0:	http://prdownloads.sourceforge.net/nbd/nbd-%{version}.tar.gz
 Source1:	nbd-server.wrapper
 Source2:	nbd-server.xinetd
