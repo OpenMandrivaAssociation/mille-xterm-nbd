@@ -10,6 +10,11 @@ Source1:	nbd-server.wrapper
 Source2:	nbd-server.xinetd
 Source3:	README.fr
 Source4:	INSTALL.fr
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig
 BuildRequires:	glib2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
